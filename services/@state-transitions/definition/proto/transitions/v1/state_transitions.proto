@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package proto.transitions.v1;
+
+import "google/protobuf/timestamp.proto";
+
+enum ResponseStatus {
+  RESPONSE_STATUS_ACCEPTED_UNSPECIFIED = 0;
+  RESPONSE_STATUS_REJECTED = 1;
+}
+
+message StateTransitionRequest {
+  string user = 1;
+  string block = 2;
+  uint32 version = 3;
+  string transition = 4;
+  google.protobuf.Timestamp timestamp = 5;
+}
+
+message StateTransitionResponse {
+  ResponseStatus status = 1;
+}
+
+message GetStateTransitionRequest {
+  string user = 1;
+  string block = 2;
+  uint32 version = 3;
+}
+
+message GetStateTransitionResponse {
+  string user = 1;
+  string block = 2;
+  uint32 version = 3;
+  string transition = 4;
+  google.protobuf.Timestamp timestamp = 5;
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {
+  enum ServingStatus {
+    SERVING_STATUS_UNKNOWN_UNSPECIFIED = 0;
+    SERVING_STATUS_SERVING = 1;
+    SERVING_STATUS_NOT_SERVING = 2;
+  }
+  ServingStatus status = 1;
+}
+
+service EventLogService {
+  rpc StateTransition(StateTransitionRequest) returns (StateTransitionResponse) {}
+  rpc GetStateTransition(GetStateTransitionRequest) returns (GetStateTransitionResponse) {}
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
+}

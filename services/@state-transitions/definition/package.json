@@ -18,15 +18,24 @@
   ],
   "scripts": {
     "👇required package scripts": "",
-    "build": "unbuild;",
-    "clean": "rm -rf ./dist",
+    "build": "pnpm run generate; unbuild;",
+    "clean": "rm -rf ./dist ./src/proto",
+    "dev": "nodemon -e proto --watch proto/ --exec \"pnpm run build\"",
+    "format": "buf format -w",
+    "lint": "buf lint",
     "test": "echo \"@state-transitions/definition does not require test\"; exit 0;",
-    "format": "echo \"@state-transitions/definition does not require test\"; exit 0;",
-    "lint": "echo \"@state-transitions/definition does not require test\"; exit 0;",
-    "☝️ required package scripts": ""
+    "typecheck": "echo \"@state-transitions/definition does not require typechecking\"; exit 0;",
+    "☝️ required package scripts": "",
+    "generate": "buf generate"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@bufbuild/buf": "1.15.0-1",
+    "@bufbuild/protobuf": "1.2.0"
+  },
   "devDependencies": {
+    "@bufbuild/protoc-gen-connect-es": "0.8.6",
+    "@bufbuild/protoc-gen-es": "1.2.0",
+    "nodemon": "2.0.22",
     "typescript": "5.0.4",
     "unbuild": "1.2.0"
   }
