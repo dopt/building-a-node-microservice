@@ -46,7 +46,7 @@ message HealthCheckResponse {
   ServingStatus status = 1;
 }
 
-service EventLogService {
+service StateTransitionService {
   rpc StateTransition(StateTransitionRequest) returns (StateTransitionResponse) {}
   rpc GetStateTransition(GetStateTransitionRequest) returns (GetStateTransitionResponse) {}
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
