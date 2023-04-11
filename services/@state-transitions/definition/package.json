@@ -1,0 +1,33 @@
+{
+  "name": "@state-transitions/definition",
+  "version": "0.0.0",
+  "description": "The state transitions service definition",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "unbuild;",
+    "clean": "rm -rf ./dist",
+    "test": "echo \"@state-transitions/definition does not require test\"; exit 0;",
+    "format": "echo \"@state-transitions/definition does not require test\"; exit 0;",
+    "lint": "echo \"@state-transitions/definition does not require test\"; exit 0;",
+    "☝️ required package scripts": ""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "5.0.4",
+    "unbuild": "1.2.0"
+  }
+}
