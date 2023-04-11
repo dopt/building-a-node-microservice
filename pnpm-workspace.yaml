@@ -1,0 +1,5 @@
+packages:
+  # all packages in subdirectories of packages/
+  - "packages/**"
+  # all packages in subdirectories of services/
+  - "services/**"
