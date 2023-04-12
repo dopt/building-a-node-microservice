@@ -11,7 +11,7 @@
     "typecheck": "pnpm exec turbo run typecheck",
     "uninstall": "pnpm -r exec rm -rf node_modules"
   },
-  "packageManager": "pnpm@7.30.5",
+  "packageManager": "pnpm@8.2.0",
   "devDependencies": {
     "turbo": "1.8.8"
   }

@@ -3,7 +3,7 @@ import { fastifyConnectPlugin } from "@bufbuild/connect-fastify";
 
 import routes from "./connect";
 
-const server = fastify();
+export const server = fastify();
 
 server.register(fastifyConnectPlugin, {
   routes,

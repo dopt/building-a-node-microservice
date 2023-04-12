@@ -1,12 +1,14 @@
 {
-  "name": "@state-transitions/service",
+  "name": "@state-transitions/client",
   "version": "0.0.0",
-  "description": "The state transitions service",
+  "description": "The state transitions client",
   "type": "module",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "require": "./dist/index.cjs",
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
@@ -23,20 +25,18 @@
     "lint": "echo \"@state-transitions/service `lint` not implemented\"; exit 0;",
     "test": "echo \"@state-transitions/service `test` not implemented\"; exit 0;",
     "typecheck": "tsc --noEmit",
-    "☝️ required package scripts": "",
-    "start": "node ./dist/index.mjs"
+    "☝️ required package scripts": ""
   },
   "dependencies": {
     "@bufbuild/connect": "0.8.6",
-    "@bufbuild/connect-fastify": "0.8.6",
+    "@bufbuild/connect-node": "0.8.6",
     "@state-transitions/definition": "workspace:*",
-    "fastify": "4.15.0"
-  },
-  "devDependencies": {
-    "@bufbuild/protobuf": "1.2.0",
-    "unbuild": "1.2.0"
+    "@bufbuild/protobuf": "1.2.0"
   },
   "peerDependencies": {
     "@bufbuild/protobuf": "1.2.0"
+  },
+  "devDependencies": {
+    "unbuild": "1.2.0"
   }
 }

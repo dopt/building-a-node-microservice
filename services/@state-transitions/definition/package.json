@@ -36,7 +36,6 @@
     "@bufbuild/protoc-gen-connect-es": "0.8.6",
     "@bufbuild/protoc-gen-es": "1.2.0",
     "nodemon": "2.0.22",
-    "typescript": "5.0.4",
     "unbuild": "1.2.0"
   }
 }

@@ -1,0 +1,34 @@
+{
+  "name": "@state-transitions/tests",
+  "version": "0.0.0",
+  "description": "The state transitions service integration tests",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "echo \"@state-transitions/tests build target is not needed.\"; exit 0;",
+    "clean": "rm -rf ./dist",
+    "dev": "echo \"@state-transitions/tests dev not implemented\"; exit 0;",
+    "format": "echo \"@state-transitions/tests format not implemented\"; exit 0;",
+    "lint": "echo \"@state-transitions/tests lint not implemented\"; exit 0;",
+    "test": "vitest run ./src/__tests__/",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": ""
+  },
+  "dependencies": {
+    "@state-transitions/client": "workspace:*",
+    "@state-transitions/service": "workspace:*"
+  },
+  "devDependencies": {
+    "fastify": "4.15.0",
+    "vitest": "0.30.1"
+  }
+}
