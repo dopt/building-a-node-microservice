@@ -1,0 +1,18 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://user:passwd@localhost:5436/state_transitions_postgres"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../dist"
+}
+
+model StateTransition {
+  id          Int      @id @default(autoincrement())
+  user        String
+  block       String
+  version     Int
+  transition  String
+  timestamp   DateTime @default(now())
+}

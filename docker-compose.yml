@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  state_transitions_postgres:
+    container_name: state_transitions_postgres
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${STATE_TRANSITIONSPOSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${STATE_TRANSITIONSPOSTGRES_PASSWD:-passwd}
+      POSTGRES_DB: ${STATE_TRANSITIONSPOSTGRES_DB:-state_transitions_postgres}
+    ports:
+      - ${STATE_TRANSITIONSPOSTGRES_PORT:-5436}:5432
+    volumes:
+      - state_transitions_data:/var/lib/postgresql/data
+volumes:
+  state_transitions_data: ~
+networks:
+  example-net:
+    driver: bridge

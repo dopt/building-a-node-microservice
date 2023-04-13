@@ -19,11 +19,13 @@
     "dev": "echo \"@state-transitions/tests dev not implemented\"; exit 0;",
     "format": "echo \"@state-transitions/tests format not implemented\"; exit 0;",
     "lint": "echo \"@state-transitions/tests lint not implemented\"; exit 0;",
-    "test": "vitest run ./src/__tests__/",
+    "test": "./bin/runner.sh",
     "typecheck": "tsc --noEmit",
-    "☝️ required package scripts": ""
+    "☝️ required package scripts": "",
+    "test:e2e": "vitest run ./src/__tests__/"
   },
   "dependencies": {
+    "@bufbuild/protobuf": "1.2.0",
     "@state-transitions/client": "workspace:*",
     "@state-transitions/service": "workspace:*"
   },

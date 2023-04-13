@@ -29,8 +29,10 @@
   "dependencies": {
     "@bufbuild/connect": "0.8.6",
     "@bufbuild/connect-fastify": "0.8.6",
+    "@state-transitions/database": "workspace:*",
     "@state-transitions/definition": "workspace:*",
-    "fastify": "4.15.0"
+    "fastify": "4.15.0",
+    "fastify-plugin": "4.5.0"
   },
   "devDependencies": {
     "@bufbuild/protobuf": "1.2.0",
