@@ -2,11 +2,14 @@
 
 pnpm --filter @state-transitions/database run up & 
 
-# wait for postgres to come up
-while ! curl http://localhost:5436/ 2>&1 | grep '52'
-do
-  sleep 1
-done
+curl --connect-timeout 5 \
+    --max-time 10 \
+    --retry 5 \
+    --retry-delay 0 \
+    --retry-max-time 40 \
+    --retry-connrefused \
+    -s -S \
+    http://localhost:5436 > /dev/null
 
 pnpm run test:e2e;
 
